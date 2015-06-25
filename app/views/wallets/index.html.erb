@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Wallets</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Money</th>
+      <th>Currency</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @wallets.each do |wallet| %>
+      <tr>
+        <td><%= wallet.name %></td>
+        <td><%= wallet.wtype %></td>
+        <td><%= wallet.money %></td>
+        <td><%= wallet.currency %></td>
+        <td><%= link_to 'Show', wallet %></td>
+        <td><%= link_to 'Пополнить', income_wallet_path(wallet.id) %></td>
+        <td><%= link_to 'Edit', edit_wallet_path(wallet) %></td>
+        <td><%= link_to 'Destroy', wallet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Wallet', new_wallet_path %>

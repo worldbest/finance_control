@@ -1,0 +1,15 @@
+<%= form_for(@wallet) do |f| %>
+
+
+
+    <div class="field">
+      <%= f.label :money %><br>
+      <%= f.text_field :money %>
+    </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+
+    <%= button_to 'обновить', method: :update %>
+
+<% end %>
