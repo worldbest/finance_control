@@ -1,0 +1,21 @@
+h1 Listing typews
+
+table
+  thead
+    tr
+      th Name
+      th
+      th
+      th
+
+  tbody
+    - @typews.each do |typew|
+      tr
+        td = typew.name
+        td = link_to 'Show', typew
+        td = link_to 'Edit', edit_typew_path(typew)
+        td = link_to 'Destroy', typew, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Typew', new_typew_path

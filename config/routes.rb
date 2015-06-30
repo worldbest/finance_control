@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
+  resources :typews
+  resources :categories
   resources :wallets
-  get "/income/:id" => "wallets#income", as: "income_wallet"
+  get "/wallets/new/:category_id" => "wallets#new", as: "new_wallet_for_category"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
