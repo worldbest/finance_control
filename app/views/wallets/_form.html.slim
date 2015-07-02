@@ -14,15 +14,22 @@
     br
     = f.text_field :name 
 
-  .field
-    = f.label :wtype
-    br
-    = f.text_field :wtype 
 
+  .field
+    = f.label :type
+    br
+    = f.collection_select(:typew_id, Typew.all, :id, :name)
+      /(какой параметр, коллекция значений, передаваемое значение, текстовый метод)
 
 
   - if params[:category_id].present?
     = f.hidden_field :category_id, value: params[:category_id]
+  - else
+    = f.label "Категория"
+    br
+    = f.collection_select(:category_id, Category.all, :id, :name)
+    br
+
 
 
   .field

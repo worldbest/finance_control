@@ -18,7 +18,9 @@
     <% @wallets.each do |wallet| %>
       <tr>
         <td><%= wallet.name %></td>
-        <td><%= wallet.wtype %></td>
+
+        <td><%= wallet.typew.name %></td>
+        <td><%= wallet.category.name %></td>
 
         <td><%= wallet.money %></td>
         <td><%= wallet.currency %></td>

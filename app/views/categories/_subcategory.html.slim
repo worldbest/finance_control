@@ -1,0 +1,6 @@
+-categories.each do |child|
+  div class="level_#{(child.level)}"
+    =child.name
+    =child.level
+  br
+  =render 'subcategory', categories: child.children if (child.children.present?)
